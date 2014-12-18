@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.summary     = 'Ruby library for Pushbullet'
   s.description = 'Ruby library for Pushbullet\'s HTTP API (https://docs.pushbullet.com/http/)'
-  s.files       = Dir['lib/*.rb'] + Dir['lib/test/*.rb']]
+  s.files       = Dir['lib/**/*.rb']
   s.require_paths = ['lib']
   s.license     = 'MIT'
 
