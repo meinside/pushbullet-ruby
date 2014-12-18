@@ -20,6 +20,7 @@ require_relative 'v2/push'
 require_relative 'v2/users'
 require_relative 'v2/devices'
 require_relative 'v2/contacts'
+require_relative 'v2/subscriptions'
 
 module Pushbullet
   @@verbose = false
