@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 # coding: UTF-8
 
-# test_devices.rb
+# test_contacts.rb
 # 
-# test script for lib/v2/devices.rb
+# test script for lib/v2/contacts.rb
 # 
 # created on : 2014.12.18
 # last update: 2014.12.18
@@ -16,13 +16,13 @@ require 'io/console'
 
 require_relative '../../pushbullet'
 
-class TestDevices < Test::Unit::TestCase
+class TestContacts < Test::Unit::TestCase
 
   def setup
     # do nothing
   end
 
-  def test_devices
+  def test_contacts
     print '> input your Pushbullet access token: '
     input = STDIN.noecho(&:gets)
 
@@ -32,20 +32,20 @@ class TestDevices < Test::Unit::TestCase
     Pushbullet.set_access_token(access_token)
 
     # get
-    assert_not_nil(Pushbullet::V2::Devices.get)
+    assert_not_nil(Pushbullet::V2::Contacts.get)
 
-    # register
-    registered = Pushbullet::V2::Devices.register('test device', 'android')
-    assert_not_nil(registered)
+    # create
+    created = Pushbullet::V2::Contacts.create('test contact', 'email-that-does-not-exist@earth.com')
+    assert_not_nil(created)
 
     # update
-    new_name = 'test device 2'
-    updated = Pushbullet::V2::Devices.update(registered['iden'], {nickname: new_name})
+    new_name = 'test contact 2'
+    updated = Pushbullet::V2::Contacts.update(created['iden'], new_name)
     assert_not_nil(updated)
-    assert_equal(updated['nickname'], new_name)
+    assert_equal(updated['name'], new_name)
 
     # delete
-    assert_not_nil(Pushbullet::V2::Devices.delete(registered['iden']))
+    assert_not_nil(Pushbullet::V2::Contacts.delete(created['iden']))
   end
 
   def teardown

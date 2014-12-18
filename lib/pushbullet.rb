@@ -19,6 +19,7 @@ require 'json'
 require_relative 'v2/push'
 require_relative 'v2/users'
 require_relative 'v2/devices'
+require_relative 'v2/contacts'
 
 module Pushbullet
   @@verbose = false

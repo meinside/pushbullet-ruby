@@ -22,7 +22,7 @@ class TestPush < Test::Unit::TestCase
     # do nothing
   end
 
-  def test_pushes
+  def test_push
     print '> input your Pushbullet access token: '
     input = STDIN.noecho(&:gets)
 
