@@ -1,6 +1,6 @@
 # pushbullet-ruby
 
-Ruby library for Pushbullet's HTTP API (https://docs.pushbullet.com/http/)
+Ruby library for Pushbullet's v2 HTTP APIs. (https://docs.pushbullet.com/http/)
 
 ## Installation
 
@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-See test files in: https://github.com/meinside/pushbullet-ruby/tree/master/lib/test
+See test files in: https://github.com/meinside/pushbullet-ruby/tree/master/lib/v2/test
 
 ## Contributing
 
