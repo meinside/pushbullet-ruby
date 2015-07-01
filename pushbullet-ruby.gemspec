@@ -1,9 +1,9 @@
-# last update: 2014.12.18.
+# last update: 2015.07.01.
 
 Gem::Specification.new do |s|
   # version/date
-  s.version     = '0.0.1'
-  s.date        = '2014-12-18'
+  s.version     = '0.0.2'
+  s.date        = '2015-07-01'
 
   # project info
   s.name        = 'pushbullet-ruby'
