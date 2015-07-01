@@ -5,7 +5,7 @@
 # functions for Pushbullet push api
 # 
 # created on : 2014.12.18
-# last update: 2014.12.18
+# last update: 2015.07.01
 # 
 # by meinside@gmail.com
 
@@ -57,56 +57,6 @@ module Pushbullet
           title: title,
           body: text,
           url: link,
-        }
-        params.merge!(recipient) if recipient
-
-        result = Pushbullet::V2::request(API_URL, params)
-
-        case result
-        when Net::HTTPOK
-          return JSON.parse(result.body)
-        else
-          puts result.body if Pushbullet.is_verbose
-          return nil
-        end
-      end
-
-      # push address
-      # 
-      # @param name [String] name of address
-      # @param address [String] address itself, or query for the address
-      # @param recipient [Hash] key-value of either one of: 'email', 'device_iden', 'channel_tag', or 'client_iden' (can be nil)
-      # @return [JSON] result as json (nil if error)
-      def self.address(name, address, recipient = nil)
-        params = {
-          type: :address,
-          name: name,
-          address: address,
-        }
-        params.merge!(recipient) if recipient
-
-        result = Pushbullet::V2::request(API_URL, params)
-
-        case result
-        when Net::HTTPOK
-          return JSON.parse(result.body)
-        else
-          puts result.body if Pushbullet.is_verbose
-          return nil
-        end
-      end
-      
-      # push checklist
-      #
-      # @param title [String] title of note
-      # @param items [Array<String>] array of checklist items
-      # @param recipient [Hash] key-value of either one of: 'email', 'device_iden', 'channel_tag', or 'client_iden' (can be nil)
-      # @return [JSON] result as json (nil if error)
-      def self.checklist(title, items, recipient = nil)
-        params = {
-          type: :list,
-          title: title,
-          items: items,
         }
         params.merge!(recipient) if recipient
 
